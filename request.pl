@@ -21,5 +21,5 @@ my $tx   = $ua->post(
 my $pdf = $tx->res->body;
 curfile->sibling('response_test.pdf')->spurt( $pdf );
 
-warn $tx->req->to_string;
-warn $tx->res->to_string;
+#warn $tx->req->to_string;
+#warn $tx->res->to_string;
