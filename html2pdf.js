@@ -11,7 +11,7 @@ const host = '0.0.0.0';
 const port = '8080';
 
 const handleRequest = function( req, res ) {
-    console.debug( req.method + " " + req.path );
+    //console.debug( req.method + " " + req.path );
 
     if ( req.method === 'POST' ) {
         const requestBody = [];
@@ -21,7 +21,7 @@ const handleRequest = function( req, res ) {
 
         req.on('end', () => {
             const body = Buffer.concat(requestBody).toString();
-            console.debug("Body: " + body);
+            //console.debug("Body: " + body);
 
             try {
                 let params = JSON.parse( body );
