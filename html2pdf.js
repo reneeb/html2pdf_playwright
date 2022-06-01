@@ -67,7 +67,18 @@ const createPdf = async function ( res, html ) {
         const page    = await context.newPage();
 
         await page.goto('file://' + filename + '.html');
-        await page.pdf({ path: filename + '.pdf'});
+        await page.pdf({
+            path: filename + '.pdf',
+            format: 'a4',
+            printBackground: true,
+            margin : {
+                top: 10,
+                bottom: 10,
+                left: 10,
+                right: 10
+            }
+        });
+
 
         await browser.close();
     } catch (err) {
